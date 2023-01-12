@@ -1,0 +1,21 @@
+$buttons: 'blue'#3e64ff, 'white'#fff, 'orange'#ff8e00,'search' #414b56;
+@each $btn in $buttons {
+    .btn-#{nth($btn, 1)} {
+        background-color: nth($btn, 2);
+        color: #fff; 
+        &:hover, &:active {
+            background-color: nth($btn, 2) !important;
+            border: 1px solid nth($btn, 2) !important; 
+            color: #fff !important;
+        }
+        &:focus {
+            box-shadow: none !important;
+        }
+    }
+}
+@each $btn2 in $buttons {
+    .btn2-#{nth($btn2, 1)} {
+        background-color: nth($btn2, 2);
+        color: #2487ce;
+    }
+}

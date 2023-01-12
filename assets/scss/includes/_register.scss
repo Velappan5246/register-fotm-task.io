@@ -1,0 +1,114 @@
+.register-section {
+    min-height: 100vh;
+    position: relative;
+    background: #fff;
+    background: linear-gradient(132deg, #FC415A, #591BC5, #212335);
+    background-size: 400% 400%;
+    animation: Gradient 15s ease infinite;
+    .left-side {
+        min-height: 100vh;
+        z-index: 999;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+        overflow: hidden;
+        background: #fff;
+        border-radius: 0 0 350px 0;
+        &::before {
+            content: "";
+            width: 20%;
+            height: 20%;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            border-radius: 100% 0 100% 100%;
+            background-image: linear-gradient(to bottom, #ffb100, #ff8e00);
+        }
+        &::after {
+            content: "";
+            width: 30%;
+            height: 60%;
+            position: absolute;
+            top: 20%;
+            right: 0;
+            z-index: -1;
+            -webkit-clip-path: polygon(0 0, 30% 0, 70% 10%);
+            clip-path: polygon(0 0, 100% 50%, 100% 80%);
+            background-image: linear-gradient(to bottom, #ffb100, #ff8e00);
+        }
+        h1{
+            color: rgba(255,0,0,0.1);
+            font-size: 30px;
+            text-transform: uppercase;
+            font-weight: 700;
+            background-size: cover;
+            background-image: url('../../assets/images/stone-bg.jpg');
+            -webkit-background-clip: text;
+            background-clip: text; // use text as clipping mask for bg
+            animation: background-text-animation 15s linear infinite;
+            margin-bottom: 20px;
+            @include media-min-xl-x {
+                font-size: 50px;
+            }
+        }
+    }
+    .right-side {
+        min-height: 100vh;
+        padding: 30px 15px;
+        .form-section {
+            @include media-min-lg {
+                padding: 0px 35px;
+            }
+            @include media-min-xl {
+                padding: 0px 50px;
+            }
+            form {
+                .display-file-section{
+                    border: 3px dotted #fff;
+                    color: #fff;
+                    .select-file{
+                        i{
+                            cursor: pointer;
+                            font-size: 25px;
+                            color: #fff;
+                        }
+                    }
+                    .display-file{
+                        background: transparent;
+                        .file{
+                            .file-icon{
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+                button {
+                    color: #fff;
+                    text-align: center;
+                    border: 2px solid transparent;
+                    display: inline-block;
+                    padding: 0 50px;
+                    position: relative;
+                    line-height: 46px;
+                    z-index: 1;
+                    transition: all .7s ease;
+                    border-radius: 3px;
+                    text-transform: uppercase;
+                    font-size: 15px;
+                    font-weight: 400;
+                    font-family: 'Jost', sans-serif;
+                    width: 100%;
+                    background-image: linear-gradient(to bottom, #ffb400, #ff8a00);
+                    
+                    &:hover{
+                        color: $orange !important;
+                        border: 2px solid $orange !important;
+                        background: transparent !important;
+                    }
+                }
+            }
+        }
+    }
+}
